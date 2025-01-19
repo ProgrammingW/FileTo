@@ -16,12 +16,12 @@ A Python script that extracts tables from PDF files and converts them to either 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/pdf-table-extractor.git
+git clone https://github.com/ProgrammingW/FileTo.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd pdf-table-extractor
+cd FileTo
 ```
 
 3. Create a virtual environment:
