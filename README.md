@@ -1,12 +1,12 @@
-# PDF Table Extractor
+# File Converter
 
-A Python script that extracts tables from PDF files and converts them to either CSV or JSON format.
+A Python-based file conversion tool that supports multiple file formats.
 
 ## Features
-- Extract tables from specific PDF pages
-- Convert tables to CSV or JSON format
-- Support for multiple pages
-- Error handling for invalid pages or missing tables
+- PDF tables to CSV/JSON conversion
+- Excel to CSV conversion (coming soon)
+- CSV to JSON conversion (coming soon)
+- User-friendly menu interface
 
 ## Prerequisites
 - Python 3.x
@@ -24,35 +24,35 @@ git clone https://github.com/ProgrammingW/FileTo.git
 cd FileTo
 ```
 
-3. Create a virtual environment:
+3. Create and activate virtual environment:
 ```bash
-python -m venv .venv
-```
-
-4. Activate the virtual environment:
-```bash
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-5. Install the required packages:
+4. Install required packages:
 ```bash
 python3 -m pip install pandas pdfplumber
 ```
 
-6. Run the script:
+## Usage
+
+1. Make the run script executable (one-time setup):
 ```bash
 chmod +x run.sh
+```
+
+2. Run the application:
+```bash
 ./run.sh
 ```
 
-The script will prompt you to:
-1. Select a page number from the PDF
-2. Choose output format (CSV or JSON)
+3. Choose from the available conversion options in the menu
 
-## Output
-The converted file will be saved in the same location as the input PDF with either `.csv` or `.json` extension.
+## Supported Conversions
+- PDF tables to CSV/JSON
+- More formats coming soon!
 
 ## Notes
-- The script assumes that the PDF has a table on the specified page. If the table is not found, the script will print an error message.
-- The script uses the `pdfplumber` library to extract the tables from the PDF.
-- The script uses the `pandas` library to convert the tables to CSV or JSON format.
+- Each converter has its own specific requirements and limitations
+- Make sure your input files are in the correct format

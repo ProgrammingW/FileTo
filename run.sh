@@ -1,3 +1,3 @@
 #!/bin/bash
 source .venv/bin/activate
-python pdfToCSV.py 
+python main.py 
