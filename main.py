@@ -14,9 +14,11 @@ def main():
             import pdfToCSV
             pdfToCSV.main()
         elif choice == '2':
-            print("Excel to CSV conversion - Coming soon!")
+            import excelToCSV
+            excelToCSV.main()
         elif choice == '3':
-            print("CSV to JSON conversion - Coming soon!")
+            import csvToJSON
+            csvToJSON.main()
         elif choice == '4':
             print("Goodbye!")
             break
