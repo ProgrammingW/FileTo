@@ -18,6 +18,9 @@ def convert_csv_to_json(csv_path):
                                    encoding=encoding,
                                    on_bad_lines='skip')
                     
+                    # Clean column names
+                    df.columns = df.columns.str.strip()
+                    
                     # Generate output path
                     output_path = csv_path.rsplit('.', 1)[0] + '.json'
                     
@@ -27,12 +30,13 @@ def convert_csv_to_json(csv_path):
                     # Save to JSON file
                     with open(output_path, 'w', encoding='utf-8') as f:
                         json.dump(json_data, f, indent=4, ensure_ascii=False)
-                        
-                    print(f"Data successfully saved to {output_path}")
-                    return True
-                except:
-                    continue
                     
+                    print(f"Successfully converted {csv_path} to {output_path}")
+                    return True
+                    
+                except Exception as inner_e:
+                    continue
+        
         raise Exception("Could not parse CSV with any common delimiter")
         
     except Exception as e:
@@ -40,14 +44,18 @@ def convert_csv_to_json(csv_path):
         return False
 
 def main():
-    # Set CSV file path
-    csv_path = input("Enter the path to your CSV file: ")
-    
-    if not os.path.exists(csv_path):
-        print("File not found!")
-        return
+    try:
+        # Set CSV file path
+        csv_path = input("Enter the path to your CSV file: ").strip()
         
-    convert_csv_to_json(csv_path)
+        if not os.path.exists(csv_path):
+            print("File not found!")
+            return
+            
+        convert_csv_to_json(csv_path)
+        
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
 
 if __name__ == "__main__":
     main() 
