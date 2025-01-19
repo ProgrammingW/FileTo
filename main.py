@@ -1,10 +1,11 @@
 def display_menu():
-    print("\n=== File Converter ===")
+    print("\n=== File Converter & Analyzer ===")
     print("1. PDF to CSV/JSON")
     print("2. Excel to CSV")
     print("3. CSV to JSON")
-    print("4. Exit")
-    return input("\nChoose an option (1-4): ")
+    print("4. Analyze Excel Data")
+    print("5. Exit")
+    return input("\nChoose an option (1-5): ")
 
 def main():
     while True:
@@ -20,6 +21,9 @@ def main():
             import csvToJSON
             csvToJSON.main()
         elif choice == '4':
+            import dataAnalyzer
+            dataAnalyzer.main()
+        elif choice == '5':
             print("Goodbye!")
             break
         else:
