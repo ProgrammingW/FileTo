@@ -1,11 +1,12 @@
-# File Converter
+# File Converter & Analyzer
 
-A Python-based file conversion tool that supports multiple file formats.
+A Python-based tool that supports multiple file conversions and data analysis.
 
 ## Features
 - PDF tables to CSV/JSON conversion
 - Excel to CSV conversion
 - CSV to JSON conversion
+- Excel data analysis and visualization
 - User-friendly menu interface
 
 ## Prerequisites
@@ -32,7 +33,7 @@ source .venv/bin/activate
 
 4. Install required packages:
 ```bash
-python3 -m pip install pandas pdfplumber openpyxl
+python3 -m pip install pandas pdfplumber openpyxl matplotlib seaborn
 ```
 
 ## Usage
@@ -47,19 +48,25 @@ chmod +x run.sh
 ./run.sh
 ```
 
-3. Choose from the available conversion options in the menu:
+3. Choose from the available options in the menu:
    - Option 1: Convert PDF tables to CSV/JSON
    - Option 2: Convert Excel files to CSV
    - Option 3: Convert CSV files to JSON
-   - Option 4: Exit
+   - Option 4: Analyze Excel Data (creates visualizations)
+   - Option 5: Exit
 
-## Supported Conversions
-- PDF tables to CSV/JSON
-- Excel (.xlsx, .xls) to CSV
-- CSV to JSON
+## Data Analysis Features
+When using the Excel Analysis option (4), the tool will create:
+- Correlation heatmaps
+- Box plots
+- Histograms
+- Statistical summary (saved as CSV)
+
+All analysis outputs are saved in the 'analysis_output' folder.
 
 ## Notes
 - Each converter has its own specific requirements and limitations
 - Make sure your input files are in the correct format
 - For PDF conversion, tables must be present in the document
 - For Excel conversion, the first sheet will be converted by default
+- For data analysis, the Excel file must contain numerical columns
